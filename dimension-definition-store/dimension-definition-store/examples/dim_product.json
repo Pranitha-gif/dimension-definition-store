@@ -1,0 +1,15 @@
+{
+  "name": "dim_product",
+  "description": "Product catalogue with category hierarchy",
+  "grain": "One row per product",
+  "source_table": "silver.products",
+  "owner": "merchandising",
+  "scd_type": 1,
+  "tags": ["product"],
+  "attributes": [
+    {"name": "product_id", "data_type": "string", "description": "SKU", "is_key": true, "nullable": false},
+    {"name": "product_name", "data_type": "string", "description": "Display name"},
+    {"name": "category", "data_type": "string", "description": "Top-level category"},
+    {"name": "list_price", "data_type": "decimal", "description": "Current list price"}
+  ]
+}

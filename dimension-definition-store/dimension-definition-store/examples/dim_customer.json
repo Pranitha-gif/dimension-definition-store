@@ -1,0 +1,16 @@
+{
+  "name": "dim_customer",
+  "description": "Customer master used across sales and support marts",
+  "grain": "One row per customer per change (SCD2)",
+  "source_table": "silver.customers",
+  "owner": "data-platform",
+  "scd_type": 2,
+  "tags": ["customer", "core"],
+  "attributes": [
+    {"name": "customer_id", "data_type": "string", "description": "Business key from CRM", "is_key": true, "nullable": false},
+    {"name": "customer_name", "data_type": "string", "description": "Legal or display name"},
+    {"name": "segment", "data_type": "string", "description": "Enterprise, SMB or Consumer"},
+    {"name": "country", "data_type": "string", "description": "ISO country name"},
+    {"name": "signup_date", "data_type": "date", "description": "First purchase or registration date"}
+  ]
+}
